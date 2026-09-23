@@ -3,8 +3,10 @@ const app = express();
 const multer = require('multer');
 const uploadFile = require('./services/storage.service');
 const postModel = require('./models/post.model')
+const cors = require('cors');
 
 //middleware
+app.use(cors());
 app.use(express.json()); //for text readability 
 
 const upload = multer({ storage: multer.memoryStorage() }); //for image readability
